@@ -33,26 +33,151 @@
   }
 }
 
-.card {
-  padding: 2em;
+:root {
+  --primary-color: #052f5f; /* Գլխավոր գույն */
+  --secondary-color: #edf2f4; /* Հիմնական ֆոն */
+  --accent-color: #8ecae6; /* Accent գույն */
+  --completed-task-color: #d90429; /* Կատարված task գույն */
+  --all-btn-color: #118ab2; /* All կոճակի գույն */
+  --active-btn-color: #06d6a0; /* Active կոճակի գույն */
+  --completed-btn-color: #ffd166; /* Completed կոճակի գույն */
+  --text-color: #ffffff; /* Տեքստի գույն */
+  --button-hover: #034078; /* Hover */
+  --background-color: #f5f9ff; /* Ընդհանուր ֆոն */
 }
 
-.read-the-docs {
-  color: #888;
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--background-color);
+  color: var(--primary-color);
 }
 
-.toDo__item{
-  width: 300px;
-  border: 1px solid gray;
+.toDo {
+  width: 500px;
+  margin: 50px auto;
+  padding: 30px;
+  background-color: var(--secondary-color);
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
 }
 
-.toDo{
+.toDo h3 {
+  font-size: 2rem;
+  color: var(--primary-color);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.toDo__item {
   display: flex;
-  column-gap: 100px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  border-bottom: 1px solid var(--primary-color);
+  margin-bottom: 10px;
 }
 
-input{
-  height: 35px;
-  border-radius: 8px;
-  border: 1px solid rgb(254, 254, 254);
+.toDo__item h3 {
+  margin: 0;
+  font-size: 1.3rem;
+  color: var(--primary-color);
+}
+
+.toDo__item h3[style*="line-through"] {
+  color: var(--completed-task-color);
+}
+
+.toDo__item button {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  border: none;
+  padding: 10px 15px;
+  margin-left: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.toDo__item button:hover {
+  background-color: var(--button-hover);
+}
+
+.toDoFilter {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.toDoFilter button {
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  border: none;
+  font-weight: bold;
+  color: var(--text-color);
+  transition: all 0.3s ease;
+}
+
+.toDoFilter button.all {
+  background-color: var(--all-btn-color);
+}
+
+.toDoFilter button.active {
+  background-color: var(--active-btn-color);
+}
+
+.toDoFilter button.completed {
+  background-color: var(--completed-btn-color);
+}
+
+.toDoFilter button:hover {
+  opacity: 0.8;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+form input {
+  width: 100%;
+  max-width: 400px;
+  padding: 12px;
+  font-size: 1rem;
+  border: 1px solid var(--primary-color);
+  border-radius: 5px;
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+}
+
+form input::placeholder {
+  color: var(--primary-color);
+  opacity: 0.7;
+}
+
+form button {
+  padding: 12px 30px;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+form button:hover {
+  background-color: var(--button-hover);
+}
+
+form p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: red;
+  text-align: left;
 }
